@@ -121,9 +121,9 @@ export default class App extends React.Component {
               messageID: '123456789',
               title: 'title123',
               content: 'content123',
+              broadcastTime: Date.now() + 5000 + '', //延迟5秒通知，app退出以后也能触发（仅限ios）
               extras: {key123: 'value123'},
             })
-
           }
         />
         {/*<Button title="addTags"
