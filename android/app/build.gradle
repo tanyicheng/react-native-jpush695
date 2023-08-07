@@ -135,6 +135,13 @@ android {
 
     defaultConfig {
         applicationId "com.jgdemo695"
+        //jpush start
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY  : "965331a9b7ae0865c4312655", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default",        //替换你的channel,默认值：developer-default
+        ]
+        //jpush end
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -257,7 +264,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-
+    //jpush start
+    implementation project(':jpush-react-native')  // 添加 jpush 依赖
+    implementation project(':jcore-react-native')  // 添加 jcore 依赖
+    //jpush end
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
