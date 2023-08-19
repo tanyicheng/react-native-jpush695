@@ -5,7 +5,9 @@
 #import <React/RCTRootView.h>
 
 #import <React/RCTAppSetupUtils.h>
+//jpush-start
 #import <RCTJPushModule.h>
+//jpush-end
 #if RCT_NEW_ARCH_ENABLED
 #import <React/CoreModulesPlugins.h>
 #import <React/RCTCxxBridgeDelegate.h>
@@ -35,12 +37,13 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-   // APNS
+  //jpush-start APNS
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     if (@available(iOS 12.0, *)) {
       entity.types = JPAuthorizationOptionNone;
     }
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+ //jpush-end
   RCTAppSetupPrepareApp(application);
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
