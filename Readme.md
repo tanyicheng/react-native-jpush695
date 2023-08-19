@@ -1,5 +1,5 @@
 # 此例子为了使新手少走弯路，ios/android 均测试通过，RN环境0.69.5，官方地址： https://github.com/jpush/jpush-react-native/tree/master
-    这里只讲述了本地消息推送，远程消息推送查看官方文档：
+    这里只讲述了本地消息推送，远程消息推送查看官方api：https://docs.jiguang.cn/jpush/client/client_plugins
 # ios 集成步骤
 - 安装依赖
 ```
